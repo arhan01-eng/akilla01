@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthNews Indonesia - Portal Berita & Asisten Kesehatan Terpercaya</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-brand-800 text-white shadow-md backdrop-blur-md bg-opacity-95 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <!-- Logo -->
+      <a href="#" onclick="showSection('beranda')" class="flex items-center gap-2 group">
+        <svg class="w-8 h-8 text-brand-100 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+        </svg>
+        <h1 class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-100 transition-colors">HealthNews <span class="font-normal text-brand-200">Indonesia</span></h1>
+      </a>
+
+      <!-- Nav Menu -->
+      <nav class="w-full md:w-auto">
+        <ul class="flex flex-wrap justify-center md:justify-end gap-1 sm:gap-4 md:gap-6 text-sm font-semibold">
+          <li>
+            <button onclick="showSection('beranda')" class="nav-link px-3 py-2 rounded-lg text-brand-100 hover:bg-brand-700 hover:text-white transition-all">Beranda</button>
+          </li>
+          <li>
+            <button onclick="showSection('berita-section')" class="nav-link px-3 py-2 rounded-lg text-brand-100 hover:bg-brand-700 hover:text-white transition-all">Berita & Tips</button>
+          </li>
+          <li>
+            <button onclick="showSection('calculator-section')" class="nav-link px-3 py-2 rounded-lg text-brand-100 hover:bg-brand-700 hover:text-white transition-all">Kalkulator Sehat</button>
+          </li>
+          <li>
+            <button onclick="showSection('ai-advisor-section')" class="nav-link px-3 py-2 rounded-lg text-brand-100 hover:bg-brand-700 hover:text-white transition-all flex items-center gap-1.5">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-300"></span>
+              </span>
+              Asisten AI
+            </button>
+          </li>
+          <li>
+            <button onclick="showSection('about-section')" class="nav-link px-3 py-2 rounded-lg text-brand-100 hover:bg-brand-700 hover:text-white transition-all">Tentang</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden bg-brand-900 text-white py-20 lg:py-32">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-25" src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop" alt="Health background" />
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+        <div class="max-w-2xl">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-500 text-white mb-6 uppercase tracking-wider">
+            Portal Edukasi & Layanan Medis Terpercaya
+          </span>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            Pusat Edukasi Kesehatan Anda
+          </h2>
+          <p class="text-lg sm:text-xl text-brand-100 mb-8 max-w-lg leading-relaxed">
+            Menyajikan berita aktual terverifikasi, kalkulator medis pintar, dan dukungan asisten kesehatan berbasis kecerdasan buatan (AI) gratis.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <button onclick="showSection('berita-section')" class="px-8 py-4 bg-brand-500 hover:bg-brand-600 font-bold rounded-xl transition-all shadow-lg hover:shadow-brand-500/50 flex justify-center items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 4a2 2 0 00-2-2v3m2 3V10"></path></svg>
+              Baca Berita Kesehatan
+            </button>
+            <button onclick="showSection('ai-advisor-section')" class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 font-bold rounded-xl transition-all flex justify-center items-center gap-2">
+              <svg class="w-5 h-5 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+              Konsultasi AI Gratis
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK UTILITIES BAR -->
+    <div class="bg-white border-y border-slate-100 shadow-sm py-6 relative z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div onclick="showSection('calculator-section')" class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 cursor-pointer transition-all">
+          <div class="bg-brand-100 p-3 rounded-xl text-brand-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 11h.01M12 14h.01M12 17h.01M15 11h.01M15 14h.01M15 17h.01M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z"></path></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900">Kalkulator IMT Pintar</h4>
+            <p class="text-sm text-slate-500">Cari tahu berat badan ideal Anda dengan perhitungan medis akurat.</p>
+          </div>
+        </div>
+        <div onclick="showSection('ai-advisor-section')" class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 cursor-pointer transition-all">
+          <div class="bg-brand-100 p-3 rounded-xl text-brand-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900">Asisten Kesehatan AI</h4>
+            <p class="text-sm text-slate-500">Konsultasi interaktif & edukasi pencegahan penyakit 24 jam gratis.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-teal-50 border border-teal-100">
+          <div class="bg-teal-600 text-white p-3 rounded-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-teal-950">Informasi Terverifikasi</h4>
+            <p class="text-sm text-teal-800">Seluruh artikel disusun, diperiksa dan ditinjau dari jurnal medis sains tepercaya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWS SECTION -->
+    <section id="berita-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+        <div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Berita Kesehatan & Tips Terbaru</h2>
+          <p class="text-slate-500 mt-2">Dapatkan info terhangat seputar gizi, gaya hidup sehat, dan ilmu medis praktis.</p>
+        </div>
+        <!-- Search & Bookmarks Toggle -->
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <div class="relative">
+            <input type="text" id="news-search" placeholder="Cari artikel..." class="w-full sm:w-64 pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all text-sm" oninput="filterArticles()">
+            <svg class="w-5 h-5 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <button onclick="toggleBookmarkFilter()" id="btn-show-bookmarks" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 font-semibold rounded-lg text-sm transition-all">
+            <svg id="bookmark-filter-icon" class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+            <span id="bookmark-filter-label">Favorit Saya</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="flex gap-2 overflow-x-auto pb-4 mb-8 -mx-4 px-4 scrollbar-hide">
+        <button onclick="filterCategory('semua')" class="category-tab active px-4 py-2 text-sm font-semibold rounded-full bg-brand-700 text-white transition-all whitespace-nowrap">Semua</button>
+        <button onclick="filterCategory('berita')" class="category-tab px-4 py-2 text-sm font-semibold rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap">Berita</button>
+        <button onclick="filterCategory('tips-kesehatan')" class="category-tab px-4 py-2 text-sm font-semibold rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap">Tips Kesehatan</button>
+        <button onclick="filterCategory('gaya-hidup')" class="category-tab px-4 py-2 text-sm font-semibold rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap">Gaya Hidup</button>
+        <button onclick="filterCategory('kesehatan-anak')" class="category-tab px-4 py-2 text-sm font-semibold rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap">Kesehatan Anak</button>
+      </div>
+
+      <!-- News Grid Container -->
+      <div id="news-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered Dynamically by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="news-empty-state" class="hidden text-center py-20 bg-white rounded-2xl border border-slate-100 shadow-sm">
+        <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        <h3 class="text-xl font-bold text-slate-800">Artikel Tidak Ditemukan</h3>
+        <p class="text-slate-500 mt-2">Silakan ganti kata kunci atau cari kategori lainnya.</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-brand-600 text-white font-semibold rounded-lg hover:bg-brand-700 transition-all text-sm">Lihat Semua Berita</button>
+      </div>
+    </section>
+
+    <!-- HEALTH CALCULATOR SECTION -->
+    <section id="calculator-section" class="bg-brand-50/50 py-16 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-brand-600 font-bold tracking-widest text-xs uppercase bg-brand-100 px-3 py-1 rounded-full">Kalkulator Kesehatan</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Alat Pemantau Kesehatan Mandiri</h2>
+          <p class="text-slate-500 mt-2">Dapatkan penilaian gizi instan dan kebutuhan kalori dengan basis indeks formula ilmiah.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Navigation Tabs on Left/Top -->
+          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex flex-row lg:flex-col gap-2 overflow-x-auto">
+            <button onclick="switchCalc('imt')" id="btn-calc-imt" class="calc-tab w-full active flex items-center gap-3 px-4 py-3 font-semibold text-sm rounded-xl text-left bg-brand-600 text-white transition-all whitespace-nowrap">
+              <span class="p-1 bg-white/20 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg></span>
+              Kalkulator IMT / BMI
+            </button>
+            <button onclick="switchCalc('bmr')" id="btn-calc-bmr" class="calc-tab w-full flex items-center gap-3 px-4 py-3 font-semibold text-sm rounded-xl text-left text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap">
+              <span class="p-1 bg-slate-100 rounded-lg text-slate-700"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path></svg></span>
+              Kebutuhan Kalori (BMR)
+            </button>
+            <button onclick="switchCalc('water')" id="btn-calc-water" class="calc-tab w-full flex items-center gap-3 px-4 py-3 font-semibold text-sm rounded-xl text-left text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap">
+              <span class="p-1 bg-slate-100 rounded-lg text-slate-700"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg></span>
+              Kebutuhan Air Harian
+            </button>
+          </div>
+
+          <!-- Active Calculator Widget Panel -->
+          <div class="lg:col-span-8 bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm">
+            
+            <!-- CALC 1: IMT -->
+            <div id="panel-calc-imt" class="calc-panel">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                Hitung Indeks Massa Tubuh (IMT)
+              </h3>
+              <p class="text-sm text-slate-500 mb-6">Indeks massa tubuh adalah metode pemantauan berat badan ideal yang standar bagi kesehatan orang dewasa.</p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Berat Badan (kg)</label>
+                  <input type="number" id="imt-weight" placeholder="Contoh: 65" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Tinggi Badan (cm)</label>
+                  <input type="number" id="imt-height" placeholder="Contoh: 170" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+              </div>
+
+              <button onclick="calculateIMT()" class="mt-6 w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition-all">Hitung Hasil IMT</button>
+
+              <!-- Result Showcase -->
+              <div id="imt-result-box" class="hidden mt-8 p-6 bg-brand-50 border border-brand-100 rounded-xl">
+                <h4 class="font-bold text-slate-900 text-lg mb-2">Hasil Perhitungan Anda</h4>
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span id="imt-val" class="text-4xl font-extrabold text-brand-700">0.0</span>
+                  <span id="imt-category" class="font-bold text-sm text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Kategori</span>
+                </div>
+                <p id="imt-description" class="text-slate-600 text-sm leading-relaxed mb-4">Analisis rekomendasi Anda akan dimuat di sini.</p>
+                <div class="border-t border-brand-200 pt-4">
+                  <span class="text-xs font-semibold text-slate-500 block mb-2">Skala Klasifikasi Kemenkes RI:</span>
+                  <div class="grid grid-cols-4 gap-1 text-[10px] text-center font-bold text-white">
+                    <div class="bg-blue-400 py-1 rounded" title="< 18.5">Sangat Kurus</div>
+                    <div class="bg-emerald-500 py-1 rounded" title="18.5 - 25.0">Normal</div>
+                    <div class="bg-amber-500 py-1 rounded" title="25.1 - 27.0">Kelebihan</div>
+                    <div class="bg-rose-500 py-1 rounded" title="> 27.0">Obesitas</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CALC 2: BMR & DAILY CALORIES -->
+            <div id="panel-calc-bmr" class="calc-panel hidden">
+              <h3 class="text-xl font-bold text-slate-900 mb-4">Hitung Kebutuhan Kalori Harian (BMR & TDEE)</h3>
+              <p class="text-sm text-slate-500 mb-6">Menggunakan formula *Harris-Benedict* untuk menentukan energi basal minimal dan kebutuhan kalori harian berdasarkan tingkat aktivitas fisik Anda.</p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Jenis Kelamin</label>
+                  <select id="bmr-gender" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Usia (Tahun)</label>
+                  <input type="number" id="bmr-age" placeholder="Contoh: 25" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Berat Badan (kg)</label>
+                  <input type="number" id="bmr-weight" placeholder="Contoh: 60" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Tinggi Badan (cm)</label>
+                  <input type="number" id="bmr-height" placeholder="Contoh: 165" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Tingkat Aktivitas Fisik</label>
+                  <select id="bmr-activity" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
+                    <option value="1.2">Sangat Jarang Olahraga / Sedentary</option>
+                    <option value="1.375">Aktivitas Ringan (Olahraga 1-3 hari/minggu)</option>
+                    <option value="1.55">Aktivitas Sedang (Olahraga 3-5 hari/minggu)</option>
+                    <option value="1.725">Aktivitas Sangat Aktif (Olahraga Berat 6-7 hari/minggu)</option>
+                    <option value="1.9">Atlet / Pekerja Fisik Berat harian</option>
+                  </select>
+                </div>
+              </div>
+
+              <button onclick="calculateBMR()" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition-all">Hitung Kalori Harian</button>
+
+              <!-- Result -->
+              <div id="bmr-result-box" class="hidden mt-8 p-6 bg-brand-50 border border-brand-100 rounded-xl">
+                <h4 class="font-bold text-slate-900 text-lg mb-2">Kebutuhan Energi Harian Anda</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                  <div class="bg-white p-4 rounded-xl border border-brand-200/55">
+                    <span class="text-xs font-bold text-slate-500 block uppercase">Basal Metabolic Rate (BMR)</span>
+                    <span id="bmr-val" class="text-2xl font-extrabold text-slate-800">0</span> <span class="text-sm font-semibold text-slate-500">kkal/hari</span>
+                    <p class="text-[11px] text-slate-400 mt-1">Energi yang tubuh perlukan dalam kondisi istirahat total.</p>
+                  </div>
+                  <div class="bg-brand-600 p-4 rounded-xl text-white">
+                    <span class="text-xs font-bold text-white/80 block uppercase">Total Daily Energy Expenditure (TDEE)</span>
+                    <span id="tdee-val" class="text-2xl font-extrabold">0</span> <span class="text-sm font-semibold text-brand-100">kkal/hari</span>
+                    <p class="text-[11px] text-brand-100 mt-1">Kebutuhan kalori harian realistis disesuaikan aktivitas Anda.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CALC 3: WATER INTAKE -->
+            <div id="panel-calc-water" class="calc-panel hidden">
+              <h3 class="text-xl font-bold text-slate-900 mb-4">Estimasi Kebutuhan Hidrasi Harian</h3>
+              <p class="text-sm text-slate-500 mb-6">Ketahui volume cairan tubuh yang ideal dikonsumsi per hari agar ginjal sehat dan stamina terjaga secara prima.</p>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Berat Badan Anda (kg)</label>
+                <input type="number" id="water-weight" placeholder="Contoh: 55" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none mb-4">
+              </div>
+
+              <button onclick="calculateWater()" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition-all">Hitung Kebutuhan Cairan</button>
+
+              <!-- Result -->
+              <div id="water-result-box" class="hidden mt-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
+                <div class="flex items-center gap-4">
+                  <div class="p-3 bg-blue-600 rounded-full text-white">
+                    <svg class="w-8 h-8 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 text-lg">Kebutuhan Hidrasi Harian Anda</h4>
+                    <p class="text-slate-500 text-sm mt-1">Anda disarankan meminum sekitar:</p>
+                    <div class="flex items-baseline gap-2 mt-2">
+                      <span id="water-val" class="text-4xl font-extrabold text-blue-700">0.0</span>
+                      <span class="text-sm font-bold text-slate-600">Liter Air per Hari (setara <span id="water-cups" class="text-blue-700">0</span> gelas @250ml)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI HEALTH ADVISOR CONSULTANT (GEMINI INTEGRATION) -->
+    <section id="ai-advisor-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Left: Intro & Disclaimers -->
+        <div class="lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700 mb-4 uppercase">
+              Asisten Edukasi Kesehatan AI
+            </span>
+            <h2 class="text-3xl font-extrabold text-slate-900 leading-tight">
+              Tanyakan Keluhan atau Tips Kesehatan Pada AI Kami
+            </h2>
+            <p class="text-slate-500 mt-4 leading-relaxed">
+              Dukungan kecerdasan buatan berbasis <strong>Gemini 2.5 Flash</strong> untuk edukasi kesehatan harian, informasi gizi, penjelasan diagnosis umum, atau tips diet sehat Anda.
+            </p>
+            
+            <div class="mt-8 bg-amber-50 border border-amber-200/60 p-4 rounded-xl flex gap-3 text-xs text-amber-800 leading-relaxed">
+              <svg class="w-10 h-10 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              <div>
+                <strong class="font-bold">Pernyataan Penting (Disclaimer):</strong>
+                Layanan asisten berbasis AI ini bersifat murni edukasi dan panduan preventif secara umum. Informasi ini bukan merupakan diagnosa medis profesional, resep obat resmi, ataupun pengganti konsultasi klinis langsung dengan dokter di rumah sakit.
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Chips -->
+          <div class="mt-8 lg:mt-0 pt-6">
+            <span class="text-xs font-bold text-slate-500 block mb-3 uppercase">Rekomendasi Pertanyaan:</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="fillAndAskAI('Bagaimana cara diet sehat bagi penderita asam lambung?')" class="text-xs px-3 py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 border border-transparent rounded-lg text-slate-700 text-left transition-all">Diet Asam Lambung</button>
+              <button onclick="fillAndAskAI('Apa pertolongan pertama saat anak demam tinggi di malam hari?')" class="text-xs px-3 py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 border border-transparent rounded-lg text-slate-700 text-left transition-all">Pertolongan Pertama Demam</button>
+              <button onclick="fillAndAskAI('Sebutkan tips alami menurunkan kolesterol tinggi tanpa konsumsi obat harian.')" class="text-xs px-3 py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 border border-transparent rounded-lg text-slate-700 text-left transition-all">Turunkan Kolesterol Alami</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Conversational UI Box -->
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-100 shadow-xl flex flex-col h-[500px]">
+          <!-- Chat Header -->
+          <div class="p-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between rounded-t-2xl">
+            <div class="flex items-center gap-3">
+              <div class="relative">
+                <div class="p-2 bg-brand-600 rounded-lg text-white">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white"></span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 text-sm">Konsultan Kesehatan AI</h4>
+                <p class="text-[10px] text-emerald-600 font-bold">Model Gemini 2.5 Active</p>
+              </div>
+            </div>
+            <button onclick="clearChat()" class="text-xs text-slate-400 hover:text-slate-600 transition-all font-semibold">Hapus Riwayat</button>
+          </div>
+
+          <!-- Chat Messages Body -->
+          <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-4">
+            <!-- Initial Prompt Message -->
+            <div class="flex items-start gap-2.5">
+              <div class="flex-shrink-0 p-2 bg-brand-100 text-brand-700 rounded-lg text-xs font-bold">AI</div>
+              <div class="bg-slate-100 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm">
+                <p class="leading-relaxed">Halo! Saya asisten edukasi kesehatan Anda. Silakan tanyakan hal apa pun seputar gaya hidup sehat, nutrisi, olahraga, atau keluhan kesehatan ringan Anda.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input Area -->
+          <div class="p-4 border-t border-slate-100 bg-white rounded-b-2xl">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+              <input type="text" id="chat-input" placeholder="Tulis pertanyaan kesehatan Anda di sini..." class="flex-grow px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500" required>
+              <button type="submit" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-1">
+                <span>Kirim</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about-section" class="bg-white border-t border-slate-100 py-16 scroll-mt-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-extrabold text-brand-700">Tentang HealthNews Indonesia</h2>
+        <p class="text-slate-600 mt-6 text-base sm:text-lg leading-relaxed">
+          Kami didirikan dengan cita-cita mulia untuk meningkatkan kualitas literasi kesehatan masyarakat Indonesia. Di tengah badai hoaks kesehatan yang marak, HealthNews Indonesia memegang teguh komitmen untuk menyajikan artikel berlandaskan pembuktian medis (*Evidence-Based Medicine*) dengan penyampaian bahasa yang ramah, santun, dan mudah dicerna.
+        </p>
+
+        <!-- Interactive Contact Form -->
+        <div class="mt-12 bg-slate-50 border border-slate-100 p-6 sm:p-10 rounded-2xl text-left max-w-2xl mx-auto shadow-sm">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Punya Saran, Kerjasama, atau Pertanyaan?</h3>
+          <p class="text-sm text-slate-500 mb-6">Jangan ragu hubungi tim jurnalis medis atau tim editorial kami lewat formulir di bawah ini.</p>
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1.5 uppercase">Nama Lengkap</label>
+                <input type="text" required class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1.5 uppercase">Alamat Email</label>
+                <input type="email" required class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1.5 uppercase">Isi Pesan / Saran</label>
+              <textarea required rows="4" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white"></textarea>
+            </div>
+            <button type="submit" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-lg transition-all text-sm">Kirim Pesan Masukan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- NEWS DETAIL MODAL -->
+  <div id="detail-modal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+    <div class="relative bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+      <!-- Modal Header Banner -->
+      <div class="relative h-60 sm:h-80 bg-slate-100">
+        <img id="modal-image" class="w-full h-full object-cover" src="" alt="Cover article">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <button onclick="closeModal()" class="absolute top-4 right-4 bg-white/20 backdrop-blur-md hover:bg-white/40 text-white hover:text-slate-100 p-2 rounded-full transition-all focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="absolute bottom-6 left-6 right-6 text-white">
+          <span id="modal-category" class="inline-block px-2.5 py-0.5 rounded text-xs font-bold bg-brand-600 mb-2 uppercase tracking-wide">Category</span>
+          <h3 id="modal-title" class="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight">Judul Berita Utama</h3>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-6 sm:p-8 space-y-6 flex-grow">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-semibold border-b border-slate-100 pb-4">
+          <span id="modal-date">Dipublikasi pada: 29 Juni 2026</span>
+          <span id="modal-readtime" class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Estimasi Baca: 5 Menit</span>
+        </div>
+        
+        <!-- Rich Article content paragraph placeholder -->
+        <div id="modal-body" class="text-slate-700 leading-relaxed space-y-4 text-sm sm:text-base">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+          <span>Oleh: Tim Dokter Kesehatan Editorial HealthNews Indonesia</span>
+          <button onclick="closeModal()" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-lg transition-all">Selesai Membaca</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2.5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs sm:text-sm">
+    <div id="toast-icon" class="p-1.5 bg-emerald-500 rounded-lg text-white">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+    </div>
+    <span id="toast-message">Notifikasi berhasil dikirim</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-900 text-white border-t border-brand-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2 space-y-4">
+        <h3 class="text-xl font-bold">HealthNews <span class="font-normal text-brand-300">Indonesia</span></h3>
+        <p class="text-sm text-brand-100 max-w-sm leading-relaxed">
+          Penyedia konten berita dan instrumen kesehatan berbasis sains medis. Kami bertekad mewujudkan masyarakat Indonesia yang aktif, sehat, dan cerdas dalam menyaring informasi medis.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4 uppercase tracking-wider">Navigasi Link</h4>
+        <ul class="space-y-2 text-sm text-brand-200">
+          <li><button onclick="showSection('beranda')" class="hover:text-white transition-all text-left">Beranda Utama</button></li>
+          <li><button onclick="showSection('berita-section')" class="hover:text-white transition-all text-left">Edukasi Berita</button></li>
+          <li><button onclick="showSection('calculator-section')" class="hover:text-white transition-all text-left">Kalkulator Medis</button></li>
+          <li><button onclick="showSection('ai-advisor-section')" class="hover:text-white transition-all text-left">Asisten Obrolan AI</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4 uppercase tracking-wider">Disclaimer Hukum</h4>
+        <p class="text-xs text-brand-300 leading-relaxed">
+          Semua muatan gizi, kalkulasi gizi, maupun asisten AI tidak mewakili keputusan klinis klinisi resmi. Selalu konsultasikan perubahan fisiologis ke fasilitas layanan kesehatan primer terdekat.
+        </p>
+      </div>
+    </div>
+    <div class="bg-brand-950 py-6 border-t border-brand-800 text-center text-xs text-brand-300">
+      <p>© 2026 HealthNews Indonesia | Edukasi Kesehatan Terpercaya Sejak Dini. Semua Hak Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // Articles Local DB
+    const ARTICLES = [
+      {
+        id: 1,
+        title: "Pentingnya Menjaga Imunitas Tubuh di Masa Pancaroba",
+        category: "tips-kesehatan",
+        categoryLabel: "Tips Kesehatan",
+        date: "29 Juni 2026",
+        readTime: "4 min read",
+        imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
+        summary: "Menjaga daya tahan tubuh sangat penting untuk mencegah berbagai penyakit infeksi virus di musim pergantian cuaca pancaroba secara efektif.",
+        body: `
+          <p>Memasuki masa pancaroba atau peralihan musim, fluktuasi cuaca ekstrem sering kali menjadi pemicu utama menurunnya sistem kekebalan tubuh manusia. Perubahan suhu dan kelembapan udara yang tidak menentu merupakan lingkungan yang sangat disukai oleh patogen penular seperti virus influenza dan bakteri patogen.</p>
+          <strong class="block text-slate-900 font-bold mt-4">Langkah-Langkah Krusial Menjaga Imunitas:</strong>
+          <ul class="list-disc list-inside space-y-2 mt-2">
+            <li><strong>Konsumsi Makanan Tinggi Antioksidan:</strong> Lengkapi piring makan Anda dengan buah jeruk, buah beri, kiwi, brokoli, serta sayuran berdaun hijau gelap guna memenuhi kecukupan harian Vitamin C & E.</li>
+            <li><strong>Tidur yang Cukup & Teratur:</strong> Studi menunjukkan individu dengan durasi tidur malam di bawah 6 jam lebih rentan terpapar sel flu dikarenakan berkurangnya produksi sel sitokin pengatur imun tubuh. Usahakan tidur 7-8 jam per malam.</li>
+            <li><strong>Hidrasi Tubuh:</strong> Air berperan vital dalam menjaga kesehatan selaput lendir sebagai benteng mekanis pertama menangkal mikroba jahat. Pastikan minum air minimal 2 Liter per hari.</li>
+            <li><strong>Olahraga Intensitas Sedang:</strong> Olahraga ringan seperti jalan cepat selama 30 menit setiap hari membantu mobilitas sirkulasi leukosit (sel darah putih) guna mendeteksi ancaman penyakit secara dini.</li>
+          </ul>
+        `
+      },
+      {
+        id: 2,
+        title: "Nutrisi Terbaik untuk Menunjang Tumbuh Kembang Anak",
+        category: "kesehatan-anak",
+        categoryLabel: "Kesehatan Anak",
+        date: "29 Juni 2026",
+        readTime: "5 min read",
+        imageUrl: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1000&auto=format&fit=crop",
+        summary: "Nutrisi makro dan mikro yang optimal membantu perkembangan saraf, motorik kasar, serta meningkatkan kecerdasan kognitif anak sejak masa usia dini.",
+        body: `
+          <p>Masa tumbuh kembang anak atau periode 'Golden Age' (1000 hari pertama kehidupan) merupakan fase penentu yang mengukir struktur biologis organ vital, jaringan tulang, serta kecerdasan sel otak anak Anda. Pola konsumsi yang kaya zat gizi mikro merupakan asupan mutlak.</p>
+          <strong class="block text-slate-900 font-bold mt-4">Komponen Gizi Kunci Tumbuh Kembang:</strong>
+          <ul class="list-disc list-inside space-y-2 mt-2">
+            <li><strong>Asam Lemak Esensial (DHA & Omega-3):</strong> Sangat penting dalam menyusun retina mata serta mempercepat pembentukan sel sinapsis saraf di otak. Sumber utama mencakup ikan salmon, kembung, sarden, telur, dan minyak ikan.</li>
+            <li><strong>Protein Tinggi Asam Amino Esensial:</strong> Protein hewani dari ayam, daging tanpa lemak, ikan, telur sangat dibutuhkan tubuh untuk pertumbuhan jaringan massa otot anak serta perbaikan organ internal tubuh secara makro.</li>
+            <li><strong>Zat Besi (Fe):</strong> Berperan mencegah penyakit stunting dan anemia defisiensi besi yang dapat menurunkan fokus kognitif akademis anak di masa depan. Zat besi mudah diserap dari hati ayam, daging sapi, dan bayam.</li>
+            <li><strong>Kalsium dan Vitamin D:</strong> Dua elemen penentu kepadatan tulang serta pertumbuhan tinggi badan anak yang optimal. Dapat dicukupi melalui susu, keju, yoghurt, serta berjemur pagi hari.</li>
+          </ul>
+        `
+      },
+      {
+        id: 3,
+        title: "5 Tips Hidup Sehat Setiap Hari Tanpa Ribet",
+        category: "gaya-hidup",
+        categoryLabel: "Gaya Hidup",
+        date: "28 Juni 2026",
+        readTime: "3 min read",
+        imageUrl: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000&auto=format&fit=crop",
+        summary: "Mulailah kebiasaan sehat sederhana dengan olahraga harian rutin, tidur cukup, meditasi relaksasi, dan pembatasan konsumsi gula berlebih.",
+        body: `
+          <p>Menerapkan gaya hidup sehat tidak selalu menuntut pola olahraga ekstrem atau diet super ketat yang membebani mental Anda. Kunci rahasia dari tubuh sehat dan awet muda terletak pada konsistensi mikro dari rutinitas harian sederhana yang ramah dilakukan secara berkelanjutan.</p>
+          <strong class="block text-slate-900 font-bold mt-4">5 Tips Praktis yang Mengubah Kualitas Hidup Anda:</strong>
+          <ol class="list-decimal list-inside space-y-2 mt-2">
+            <li><strong>Minum Air Hangat di Pagi Hari:</strong> Segera rehidrasi tubuh setelah bangun tidur untuk menyalakan kembali metabolisme serta membantu ginjal dalam menyaring sisa racun detoksifikasi metabolisme malam hari.</li>
+            <li><strong>Ambil 10.000 Langkah per Hari:</strong> Manfaatkan tangga dibanding lift, atau parkirlah kendaraan sedikit lebih jauh dari biasanya. Aktivitas fisik konsisten harian melindungi kesehatan pembuluh darah dari plak aterosklerosis.</li>
+            <li><strong>Batasi Konsumsi Gula Tambahan:</strong> Batasi asupan gula maksimal 4 sendok makan per hari demi mengurangi risiko penyakit metabolik kronis seperi Diabetes Mellitus Tipe-2.</li>
+            <li><strong>Lakukan Latihan Pernapasan (Box Breathing):</strong> Sempatkan waktu 3 hingga 5 menit melakukan meditasi pernapasan guna menurunkan hormon stress kortisol di tengah kepenatan aktivitas sehari-hari.</li>
+            <li><strong>Siapkan Makanan Berbahan Segar:</strong> Minimalisasi konsumsi junk food atau ultra-processed food yang sarat pengawet kimiawi berbahaya dan tinggi kandungan natrium.</li>
+          </ol>
+        `
+      },
+      {
+        id: 4,
+        title: "Mengatasi Insomnia dengan Metode Sleep Hygiene",
+        category: "gaya-hidup",
+        categoryLabel: "Gaya Hidup",
+        date: "27 Juni 2026",
+        readTime: "5 min read",
+        imageUrl: "https://images.unsplash.com/photo-1511295742364-92767fa62d9f?q=80&w=1000&auto=format&fit=crop",
+        summary: "Ketahui cara memprogram ulang ritme sirkadian tidur alami tubuh Anda dengan penataan atmosfer kamar tidur sehat.",
+        body: `
+          <p>Insomnia kronis yang dibiarkan tanpa penanganan memicu gangguan fokus kognitif, kelelahan mental, hipertensi, hingga disfungsi psikologis depresi ringan. Metode <strong>Sleep Hygiene</strong> dirancang untuk mereparasi jam biologis internal otak kita.</p>
+          <strong class="block text-slate-900 font-bold mt-4">Aturan Utama Penerapan Sleep Hygiene:</strong>
+          <ul class="list-disc list-inside space-y-2 mt-2">
+            <li><strong>Jadwal Tidur Konsisten:</strong> Bangun dan tidurlah di jam yang sama setiap hari, bahkan saat akhir pekan libur kerja. Ini memperkuat jam sirkadian otak.</li>
+            <li><strong>Redupkan Pencahayaan & Matikan Layar:</strong> Blue-light (cahaya biru) gawai menekan sekresi hormon melatonin alami tubuh. Jauhkan layar gadget sekurangnya 1 jam sebelum naik ke tempat tidur.</li>
+            <li><strong>Suhu Kamar Dingin dan Nyaman:</strong> Suhu sejuk merangsang pusat saraf tidur untuk menurunkan suhu inti tubuh alami sebagai isyarat persiapan metabolisme istirahat malam.</li>
+            <li><strong>Hindari Konsumsi Stimulan:</strong> Jauhi kafein, teh kental, nikotin rokok, atau konsumsi makanan berat 4-6 jam sebelum waktu tidur demi membiarkan lambung beristirahat tenang.</li>
+          </ul>
+        `
+      }
+    ];
+
+    // Reactive State Management
+    let currentCategory = 'semua';
+    let searchQuery = '';
+    let bookmarkedIds = JSON.parse(localStorage.getItem('hn_bookmarks') || '[]');
+    let showBookmarksOnly = false;
+    const apiKey = ""; // Runtime automatically binds key
+
+    // ON DOM LOAD
+    window.onload = function() {
+      renderArticles();
+    };
+
+    // NAVIGATOR ROUTING SPA
+    function showSection(sectionId) {
+      // Hide and show logic
+      const sections = ['berita-section', 'calculator-section', 'ai-advisor-section', 'about-section'];
+      
+      if (sectionId === 'beranda') {
+        // Show Hero, and everything else naturally
+        document.getElementById('hero').classList.remove('hidden');
+        sections.forEach(sec => document.getElementById(sec).classList.remove('hidden'));
+      } else {
+        // Multi-page SPA navigation
+        document.getElementById('hero').classList.add('hidden');
+        sections.forEach(sec => {
+          if (sec === sectionId) {
+            document.getElementById(sec).classList.remove('hidden');
+            // Scroll smoothly
+            document.getElementById(sec).scrollIntoView({ behavior: 'smooth' });
+          } else {
+            document.getElementById(sec).classList.add('hidden');
+          }
+        });
+      }
+
+      // Sync Navigation Link Colors Active State
+      const links = document.querySelectorAll('.nav-link');
+      links.forEach(link => {
+        if (link.textContent.toLowerCase().includes(sectionId.split('-')[0])) {
+          link.classList.add('bg-brand-700', 'text-white');
+        } else {
+          link.classList.remove('bg-brand-700', 'text-white');
+        }
+      });
+    }
+
+    // ARTICLES RENDER FUNCTION
+    function renderArticles() {
+      const container = document.getElementById('news-grid-container');
+      const emptyState = document.getElementById('news-empty-state');
+      
+      // Filter logic
+      let filtered = ARTICLES.filter(art => {
+        const matchesCat = (currentCategory === 'semua' || art.category === currentCategory);
+        const matchesSearch = art.title.toLowerCase().includes(searchQuery) || art.summary.toLowerCase().includes(searchQuery);
+        const matchesBookmark = !showBookmarksOnly || bookmarkedIds.includes(art.id);
+        return matchesCat && matchesSearch && matchesBookmark;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = "";
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      
+      container.innerHTML = filtered.map(art => {
+        const isBookmarked = bookmarkedIds.includes(art.id);
+        return `
+          <div class="news-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-slate-100 transition-all duration-300 flex flex-col justify-between group">
+            <div class="relative overflow-hidden">
+              <img src="${art.imageUrl}" alt="${art.title}" class="w-full h-52 object-cover group-hover:scale-105 transition-all duration-500">
+              <span class="absolute top-4 left-4 bg-brand-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                ${art.categoryLabel}
+              </span>
+              <!-- Bookmark toggle inside card -->
+              <button onclick="toggleBookmark(event, ${art.id})" class="absolute top-4 right-4 p-2 bg-white/80 hover:bg-white text-slate-700 hover:text-brand-600 rounded-full shadow transition-all focus:outline-none">
+                <svg class="w-5 h-5 ${isBookmarked ? 'fill-brand-500 text-brand-500' : 'text-slate-600'}" fill="${isBookmarked ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-xs text-slate-400 font-semibold mb-3">
+                  <span>${art.date}</span>
+                  <span>•</span>
+                  <span>${art.readTime}</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 leading-snug group-hover:text-brand-700 transition-colors duration-200">
+                  ${art.title}
+                </h3>
+                <p class="text-sm text-slate-500 mt-2 line-clamp-3">
+                  ${art.summary}
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <button onclick="openArticleModal(${art.id})" class="w-full text-center bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-bold py-2.5 rounded-xl text-sm transition-all flex justify-center items-center gap-1">
+                  <span>Baca Artikel</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // SEARCH INPUT HANDLER
+    function filterArticles() {
+      searchQuery = document.getElementById('news-search').value.toLowerCase().trim();
+      renderArticles();
+    }
+
+    // CATEGORY FILTER TABS HANDLER
+    function filterCategory(cat) {
+      currentCategory = cat;
+      const tabs = document.querySelectorAll('.category-tab');
+      tabs.forEach(tab => {
+        if (tab.textContent.toLowerCase() === cat.replace('-', ' ')) {
+          tab.className = "category-tab active px-4 py-2 text-sm font-semibold rounded-full bg-brand-700 text-white transition-all whitespace-nowrap";
+        } else if (cat === 'semua' && tab.textContent.toLowerCase() === 'semua') {
+          tab.className = "category-tab active px-4 py-2 text-sm font-semibold rounded-full bg-brand-700 text-white transition-all whitespace-nowrap";
+        } else {
+          tab.className = "category-tab px-4 py-2 text-sm font-semibold rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap";
+        }
+      });
+      renderArticles();
+    }
+
+    // BOOKMARKS STATE CONTROLLER
+    function toggleBookmark(event, id) {
+      event.stopPropagation();
+      const index = bookmarkedIds.indexOf(id);
+      if (index > -1) {
+        bookmarkedIds.splice(index, 1);
+        showToast("Bookmark berhasil dihapus dari daftar favorit.");
+      } else {
+        bookmarkedIds.push(id);
+        showToast("Artikel berhasil disimpan ke dalam daftar favorit!");
+      }
+      localStorage.setItem('hn_bookmarks', JSON.stringify(bookmarkedIds));
+      renderArticles();
+    }
+
+    function toggleBookmarkFilter() {
+      showBookmarksOnly = !showBookmarksOnly;
+      const btn = document.getElementById('btn-show-bookmarks');
+      const label = document.getElementById('bookmark-filter-label');
+      const icon = document.getElementById('bookmark-filter-icon');
+
+      if (showBookmarksOnly) {
+        btn.classList.add('bg-brand-100', 'text-brand-800', 'hover:bg-brand-200');
+        label.textContent = "Menampilkan Favorit";
+        icon.classList.remove('text-slate-500');
+        icon.classList.add('text-brand-700', 'fill-brand-700');
+      } else {
+        btn.classList.remove('bg-brand-100', 'text-brand-800', 'hover:bg-brand-200');
+        label.textContent = "Favorit Saya";
+        icon.classList.remove('text-brand-700', 'fill-brand-700');
+        icon.classList.add('text-slate-500');
+      }
+      renderArticles();
+    }
+
+    function resetFilters() {
+      document.getElementById('news-search').value = "";
+      searchQuery = "";
+      showBookmarksOnly = false;
+      
+      const btn = document.getElementById('btn-show-bookmarks');
+      const label = document.getElementById('bookmark-filter-label');
+      const icon = document.getElementById('bookmark-filter-icon');
+      btn.classList.remove('bg-brand-100', 'text-brand-800', 'hover:bg-brand-200');
+      label.textContent = "Favorit Saya";
+      icon.className = "w-4 h-4 text-slate-500";
+
+      filterCategory('semua');
+    }
+
+    // ARTICLE DETAILS POP-UP MODAL
+    function openArticleModal(id) {
+      const art = ARTICLES.find(a => a.id === id);
+      if (!art) return;
+
+      document.getElementById('modal-image').src = art.imageUrl;
+      document.getElementById('modal-title').textContent = art.title;
+      document.getElementById('modal-category').textContent = art.categoryLabel;
+      document.getElementById('modal-date').textContent = "Dipublikasikan pada: " + art.date;
+      document.getElementById('modal-readtime').textContent = "Estimasi Baca: " + art.readTime;
+      document.getElementById('modal-body').innerHTML = art.body;
+
+      // Unhide Modal & Lock Page Scroll
+      document.getElementById('detail-modal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('detail-modal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // HEALTH CALCULATOR CORE LOGIC
+    function switchCalc(type) {
+      // Hide all panels
+      const panels = document.querySelectorAll('.calc-panel');
+      panels.forEach(p => p.classList.add('hidden'));
+
+      // Inactivate all tabs
+      const tabs = document.querySelectorAll('.calc-tab');
+      tabs.forEach(t => {
+        t.className = "calc-tab w-full flex items-center gap-3 px-4 py-3 font-semibold text-sm rounded-xl text-left text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all whitespace-nowrap";
+        const svgContainer = t.querySelector('span');
+        svgContainer.className = "p-1 bg-slate-100 rounded-lg text-slate-700";
+      });
+
+      // Show Selected Panel & Highlight Current Tab
+      document.getElementById(`panel-calc-${type}`).classList.remove('hidden');
+      const activeTab = document.getElementById(`btn-calc-${type}`);
+      activeTab.className = "calc-tab w-full flex items-center gap-3 px-4 py-3 font-semibold text-sm rounded-xl text-left bg-brand-600 text-white transition-all whitespace-nowrap shadow-md";
+      const activeSvgContainer = activeTab.querySelector('span');
+      activeSvgContainer.className = "p-1 bg-white/20 rounded-lg text-white";
+    }
+
+    // 1. BMI CALCULATOR (IMT)
+    function calculateIMT() {
+      const weight = parseFloat(document.getElementById('imt-weight').value);
+      const heightCm = parseFloat(document.getElementById('imt-height').value);
+
+      if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
+        showToast("Mohon masukkan berat dan tinggi badan yang valid!", "warning");
+        return;
+      }
+
+      const heightM = heightCm / 100;
+      const imt = weight / (heightM * heightM);
+      const roundedImt = imt.toFixed(1);
+
+      let category = "";
+      let desc = "";
+      let badgeColor = "";
+
+      if (imt < 18.5) {
+        category = "Kurus (Kekurangan Berat Badan)";
+        desc = "Berat badan Anda kurang dari ambang batas normal medis. Direkomendasikan untuk menambah porsi asupan nutrisi padat gizi seimbang serta berdiskusi dengan ahli gizi.";
+        badgeColor = "bg-blue-100 text-blue-700";
+      } else if (imt >= 18.5 && imt <= 25.0) {
+        category = "Normal (Berat Badan Ideal)";
+        desc = "Selamat! Tubuh Anda memiliki berat badan yang proporsional dan sangat ideal bagi metabolisme. Pertahankan pola hidup makan teratur dan rutin berolahraga.";
+        badgeColor = "bg-emerald-100 text-emerald-700";
+      } else if (imt >= 25.1 && imt <= 27.0) {
+        category = "Kelebihan Berat Badan (Overweight)";
+        desc = "Anda masuk ke fase peringatan dini kelebihan berat badan. Kurangi konsumsi karbohidrat sederhana serta mulailah olahraga kardio minimal 150 menit per minggu.";
+        badgeColor = "bg-amber-100 text-amber-700";
+      } else {
+        category = "Obesitas (Berat Badan Berlebih Kronis)";
+        desc = "Nilai IMT Anda berisiko tinggi memicu penyakit kardiovaskular kronis, diabetes, hipertensi. Segera jadwalkan kontrol pola diet rendah kalori dengan dokter spesialis gizi.";
+        badgeColor = "bg-rose-100 text-rose-700";
+      }
+
+      document.getElementById('imt-val').textContent = roundedImt;
+      const badge = document.getElementById('imt-category');
+      badge.textContent = category;
+      badge.className = `font-bold text-xs sm:text-sm px-3 py-1 rounded-full ${badgeColor}`;
+      document.getElementById('imt-description').textContent = desc;
+
+      document.getElementById('imt-result-box').classList.remove('hidden');
+    }
+
+    // 2. BMR & TDEE CALORIES CALCULATOR
+    function calculateBMR() {
+      const gender = document.getElementById('bmr-gender').value;
+      const age = parseInt(document.getElementById('bmr-age').value);
+      const weight = parseFloat(document.getElementById('bmr-weight').value);
+      const height = parseFloat(document.getElementById('bmr-height').value);
+      const activityMult = parseFloat(document.getElementById('bmr-activity').value);
+
+      if (!age || !weight || !height || age <= 0 || weight <= 0 || height <= 0) {
+        showToast("Isilah usia, tinggi badan, dan berat badan Anda dengan benar!", "warning");
+        return;
+      }
+
+      let bmr = 0;
+      // Harris-Benedict Formula
+      if (gender === 'male') {
+        bmr = 66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age);
+      } else {
+        bmr = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * age);
+      }
+
+      const tdee = bmr * activityMult;
+
+      document.getElementById('bmr-val').textContent = Math.round(bmr).toLocaleString('id-ID');
+      document.getElementById('tdee-val').textContent = Math.round(tdee).toLocaleString('id-ID');
+
+      document.getElementById('bmr-result-box').classList.remove('hidden');
+    }
+
+    // 3. WATER INTAKE CALCULATOR
+    function calculateWater() {
+      const weight = parseFloat(document.getElementById('water-weight').value);
+      if (!weight || weight <= 0) {
+        showToast("Masukkan berat badan Anda untuk kalkulasi hidrasi cairan!", "warning");
+        return;
+      }
+
+      // Standard hydration calculation formula: weight in kg * 0.035
+      const waterLiters = weight * 0.035;
+      const roundedLiters = waterLiters.toFixed(1);
+      // Volume glass assuming 250ml per glass
+      const totalCups = Math.ceil((waterLiters * 1000) / 250);
+
+      document.getElementById('water-val').textContent = roundedLiters;
+      document.getElementById('water-cups').textContent = totalCups;
+
+      document.getElementById('water-result-box').classList.remove('hidden');
+    }
+
+    // AI HEALTH CONSULTANT OBROLAN LOGIC (INTEGRATED GEMINI 2.5 FLASH)
+    async function handleChatSubmit(event) {
+      event.preventDefault();
+      const inputEl = document.getElementById('chat-input');
+      const text = inputEl.value.trim();
+      if (!text) return;
+
+      appendChatMessage("user", text);
+      inputEl.value = "";
+
+      // Add loading state message
+      const loadingId = appendChatMessage("ai", "Sedang mengkaji data medis... Mohon tunggu.");
+
+      try {
+        const responseText = await callGeminiAPI(text);
+        updateChatMessage(loadingId, responseText);
+      } catch (err) {
+        console.error(err);
+        updateChatMessage(loadingId, "Maaf, terjadi gangguan jaringan saat menghubungi pusat AI. Silakan ulangi beberapa saat lagi.");
+      }
+    }
+
+    function fillAndAskAI(query) {
+      document.getElementById('chat-input').value = query;
+      document.getElementById('chat-form').dispatchEvent(new Event('submit'));
+    }
+
+    // Call Gemini API with Exponential Backoff
+    async function callGeminiAPI(userQuery, retryCount = 0) {
+      const systemPrompt = `
+        Anda adalah asisten AI edukasi kesehatan (Health Advisor) resmi dari portal "HealthNews Indonesia". 
+        Tugas Anda adalah melayani konsultasi interaktif, menjawab seputar kesehatan umum, gaya hidup sehat, rekomendasi menu gizi, cara hidup sehat, penjelasan terminologi penyakit, atau tips preventif secara bersahabat, edukatif, dan informatif bagi masyarakat Indonesia.
+        
+        Aturan yang wajib ditaati seketat mungkin:
+        1. Gunakan bahasa Indonesia yang ramah, santun, empati, komunikatif, dan mudah dipahami oleh orang awam.
+        2. Berikan saran preventif praktis yang mudah dieksekusi di rumah.
+        3. Selalu ingatkan bahwa jawaban ini bersifat edukasi preventif sekunder dan tidak dapat mendepak/menggantikan diagnosa dari dokter profesional di klinik atau laboratorium.
+        4. Jika mendeteksi kondisi darurat medis (seperti serangan jantung, pendarahan hebat, stroke), beri instruksi langsung untuk segera memanggil ambulans atau pergi ke unit IGD rumah sakit terdekat.
+      `;
+
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+      const payload = {
+        contents: [
+          {
+            parts: [
+              { text: userQuery }
+            ]
+          }
+        ],
+        systemInstruction: {
+          parts: [
+            { text: systemPrompt }
+          ]
+        }
+      };
+
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP Error Status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        return data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, sistem tidak menerima respons teks yang benar.";
+      } catch (error) {
+        // Exponential Backoff retry up to 5 times
+        if (retryCount < 5) {
+          const delays = [1000, 2000, 4000, 8000, 16000];
+          await new Promise(resolve => setTimeout(resolve, delays[retryCount]));
+          return callGeminiAPI(userQuery, retryCount + 1);
+        } else {
+          throw error;
+        }
+      }
+    }
+
+    // AUXILIARY CHAT DISPLAY FUNCTION
+    function appendChatMessage(role, text) {
+      const container = document.getElementById('chat-messages');
+      const id = "msg-" + Date.now() + Math.random().toString(36).substr(2, 5);
+      
+      const msgDiv = document.createElement('div');
+      msgDiv.id = id;
+      msgDiv.className = "flex items-start gap-2.5 " + (role === 'user' ? 'justify-end' : '');
+
+      const avatar = role === 'user' ? 'K' : 'AI';
+      const avatarBg = role === 'user' ? 'bg-slate-700 text-white' : 'bg-brand-100 text-brand-700';
+      const bubbleBg = role === 'user' ? 'bg-brand-600 text-white rounded-tr-none' : 'bg-slate-100 text-slate-800 rounded-tl-none';
+
+      msgDiv.innerHTML = `
+        ${role === 'ai' ? `<div class="flex-shrink-0 p-2 ${avatarBg} rounded-lg text-xs font-bold">${avatar}</div>` : ''}
+        <div class="${bubbleBg} p-3 rounded-2xl max-w-[85%] text-sm shadow-sm whitespace-pre-line leading-relaxed">
+          ${text}
+        </div>
+        ${role === 'user' ? `<div class="flex-shrink-0 p-2 ${avatarBg} rounded-lg text-xs font-bold">${avatar}</div>` : ''}
+      `;
+
+      container.appendChild(msgDiv);
+      container.scrollTop = container.scrollHeight;
+      return id;
+    }
+
+    function updateChatMessage(id, text) {
+      const msgDiv = document.getElementById(id);
+      if (msgDiv) {
+        const bubble = msgDiv.querySelector('.max-w-\\[85\\%\\]');
+        if (bubble) {
+          bubble.innerHTML = text;
+        }
+        const container = document.getElementById('chat-messages');
+        container.scrollTop = container.scrollHeight;
+      }
+    }
+
+    function clearChat() {
+      const container = document.getElementById('chat-messages');
+      container.innerHTML = `
+        <div class="flex items-start gap-2.5">
+          <div class="flex-shrink-0 p-2 bg-brand-100 text-brand-700 rounded-lg text-xs font-bold">AI</div>
+          <div class="bg-slate-100 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm">
+            <p class="leading-relaxed">Halo! Saya asisten edukasi kesehatan Anda. Silakan tanyakan hal apa pun seputar gaya hidup sehat, nutrisi, olahraga, atau keluhan kesehatan ringan Anda.</p>
+          </div>
+        </div>
+      `;
+      showToast("Riwayat obrolan AI berhasil dihapus.");
+    }
+
+    // CONTACT FORM INTERACTIVE SUCCESS POPUP
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      showToast("Pesan Anda telah dikirim! Tim redaksi HealthNews akan segera menghubungi Anda.");
+      event.target.reset();
+    }
+
+    // TOAST NOTIFIER HELPER (REPLACES BROWSER ALERTS)
+    function showToast(message, type = "success") {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastMsg.textContent = message;
+
+      if (type === "warning") {
+        toastIcon.className = "p-1.5 bg-amber-500 rounded-lg text-white";
+        toastIcon.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>`;
+      } else {
+        toastIcon.className = "p-1.5 bg-emerald-500 rounded-lg text-white";
+        toastIcon.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+      }
+
+      toast.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
